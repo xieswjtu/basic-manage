@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import CommonAside from "../components/commonAside";
+import CommonHeader from "../components/commonHeader";
 import { Outlet } from "react-router-dom";
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-  } from '@ant-design/icons';
   import { Layout, Menu } from 'antd';
   
 const { Header, Sider, Content } = Layout;
@@ -17,15 +11,12 @@ const Main = () => {
     const [collapsed, setCollapsed] = useState(false);
 
     return (
-        <Layout>
+        <Layout style={{
+            height:'100vh'
+        }}>
         <CommonAside/>
         <Layout className="site-layout">
-            <Header className="site-layout-background" style={{ padding: 0 }}>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                className: 'trigger',
-                onClick: () => setCollapsed(!collapsed),
-            })}
-            </Header>
+            <CommonHeader/>
             <Content
             className="site-layout-background"
             style={{
@@ -42,3 +33,4 @@ const Main = () => {
     }
 
 export default Main
+

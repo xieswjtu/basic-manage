@@ -1,12 +1,33 @@
 import React, {useState} from "react";
 import MenuConfig from '../../config'
-import {
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-  } from '@ant-design/icons';
+import * as Icon from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
-  const {Sider} = Layout
+
+const {Sider} = Layout
+
+//动态获取icon
+const iconToElement = (name) => React.createElement(Icon[name])
+
+//处理菜单数据
+const siderItem = MenuConfig.map(item => {
+    //无子菜单
+    const child = {
+        key: item.path,
+        icon: iconToElement(item.icon), 
+        label: item.label 
+    }
+    //有子菜单
+    if (item.children) {
+        child.children = item.children.map(el => {
+            return {
+                key: el.path,
+                label: el.label
+            }
+        })
+    }
+    return child
+})
+
 
 
 const CommonAside = () => {
@@ -22,23 +43,7 @@ const CommonAside = () => {
             theme="dark"
             mode="inline"
             defaultSelectedKeys={['1']}
-            items={[
-                {
-                key: '1',
-                icon: <UserOutlined />,
-                label: 'nav 1',
-                },
-                {
-                key: '2',
-                icon: <VideoCameraOutlined />,
-                label: 'nav 2',
-                },
-                {
-                key: '3',
-                icon: <UploadOutlined />,
-                label: 'nav 3',
-                },
-            ]}
+            items={siderItem}
             />
         </Sider>
     )    
