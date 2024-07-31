@@ -30,20 +30,20 @@ const siderItem = MenuConfig.map(item => {
 
 
 
-const CommonAside = () => {
-    const [collapsed, setCollapsed] = useState(false);
+const CommonAside = ({collapsed}) => {
     return (
         <Sider trigger={null} collapsible collapsed={collapsed}>
             <h3 style={{
                 color: "white",
-                marginLeft: "20px"
+                marginLeft: "30px"
                         
-            }}>通用后台管理系统</h3>
+            }}>{!collapsed?'通用后台管理系统':'后台'}</h3>
             <Menu
             theme="dark"
             mode="inline"
             defaultSelectedKeys={['1']}
             items={siderItem}
+            inlineCollapsed={collapsed}
             />
         </Sider>
     )    

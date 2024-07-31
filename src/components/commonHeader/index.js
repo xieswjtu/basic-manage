@@ -1,11 +1,13 @@
 import React from "react";
 import { Layout, Button, Avatar, Dropdown, Menu } from "antd";
 import { MenuFoldOutlined } from '@ant-design/icons'
+import { useDispatch } from "react-redux";
+import { collapseMenu } from "../../store/reducers/tab";
 
 const { Header} = Layout
 
 
-const CommonHeader = () => {
+const CommonHeader = ({collapsed}) => {
     //登出
     const logout = () => {
 
@@ -31,6 +33,11 @@ const CommonHeader = () => {
                 }
             ]}
     />
+    const dispatch = useDispatch()
+    //点击展开和收起
+    const setCollapsed = () => { 
+        dispatch(collapseMenu())
+    }
     return(
         <Header style = {{
             display: 'flex',
@@ -46,9 +53,10 @@ const CommonHeader = () => {
                 height: 32,
                 backgroundColor: 'white'
               }}
+              onClick={() => setCollapsed()}
             />
             <Dropdown
-            overlay={dropDownItem}
+              menu={dropDownItem}
             >
               <Avatar size={36} src = {<img src = {require("../../assets/images/user1.png")}/>} />   
             </Dropdown>        

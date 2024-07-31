@@ -3,20 +3,22 @@ import CommonAside from "../components/commonAside";
 import CommonHeader from "../components/commonHeader";
 import { Outlet } from "react-router-dom";
   import { Layout, Menu } from 'antd';
+import { useSelector } from "react-redux";
   
 const { Header, Sider, Content } = Layout;
 
 
 const Main = () => {
-    const [collapsed, setCollapsed] = useState(false);
+    //获取展开收起状态
+    const collapsed = useSelector(state => state.tab.isCollapse)
 
     return (
         <Layout style={{
             height:'100vh'
         }}>
-        <CommonAside/>
+        <CommonAside collapsed={collapsed}/>
         <Layout className="site-layout">
-            <CommonHeader/>
+            <CommonHeader collapsed={collapsed}/>
             <Content
             className="site-layout-background"
             style={{
