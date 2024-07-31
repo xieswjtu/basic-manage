@@ -1,0 +1,35 @@
+.home img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 40px;
+
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.userInfo {
+    font-size: 26px;
+    margin-left: 50px;
+}
+
+.home .loginInfo p {
+    line-height: 20px;
+    font-size: 16px;
+    color: #999;;
+}
+
+.home .loginInfo p span {
+    color: #666;
+    margin-left: 60px;
+
+}
+
+
+

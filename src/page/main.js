@@ -16,20 +16,20 @@ const Main = () => {
         <Layout style={{
             height:'100vh'
         }}>
-        <CommonAside collapsed={collapsed}/>
-        <Layout className="site-layout">
-            <CommonHeader collapsed={collapsed}/>
-            <Content
-            className="site-layout-background"
-            style={{
-                margin: '24px 16px',
-                padding: 24,
-                minHeight: 280,
-            }}
-            >
-            Content
-            </Content>
-        </Layout>
+            <CommonAside collapsed={collapsed}/>
+            <Layout className="site-layout">
+                <CommonHeader collapsed={collapsed}/>
+                <Content
+                className="site-layout-background"
+                style={{
+                    margin: '24px 16px',
+                    padding: 24,
+                    minHeight: 280,
+                }}
+                >
+                  <Outlet/>
+                </Content>
+            </Layout>
         </Layout>
     );
     }
