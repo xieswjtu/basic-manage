@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import {  Navigate, useNavigate } from "react-router-dom";
 import MenuConfig from '../../config'
 import * as Icon from '@ant-design/icons';
 import { Menu, Layout } from 'antd';
@@ -31,6 +32,7 @@ const siderItem = MenuConfig.map(item => {
 
 
 const CommonAside = ({collapsed}) => {
+    const navigate = useNavigate()
     return (
         <Sider trigger={null} collapsible collapsed={collapsed}>
             <h3 style={{
@@ -44,6 +46,9 @@ const CommonAside = ({collapsed}) => {
             defaultSelectedKeys={['1']}
             items={siderItem}
             inlineCollapsed={collapsed}
+            onClick={(e)=>{
+                navigate(e.key)
+            }}
             />
         </Sider>
     )    

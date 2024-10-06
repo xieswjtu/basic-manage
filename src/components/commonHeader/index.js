@@ -3,22 +3,22 @@ import { Layout, Button, Avatar, Dropdown, Menu } from "antd";
 import { MenuFoldOutlined } from '@ant-design/icons'
 import { useDispatch } from "react-redux";
 import { collapseMenu } from "../../store/reducers/tab";
+import { useNavigate } from "react-router-dom";
 
 const { Header} = Layout
 
 
 const CommonHeader = ({collapsed}) => {
+    const navigate = useNavigate()
     //登出
     const logout = () => {
 
     }
-    const dropDownItem = 
-    <Menu
-    items = {[
+    const items = [
                 {
                     key: '1',
                     label: (
-                        <a target="_blank" rel='noopener noreferrer'>
+                        <a onClick={()=>{navigate("/home")}} target="_blank" rel='noopener noreferrer'>
                             个人中心
                         </a>
                     )
@@ -26,13 +26,12 @@ const CommonHeader = ({collapsed}) => {
                 {
                     key: '2',
                     label: (
-                        <a onclick={() => logout} target="_blank" rel='noopener noreferrer'>
+                        <a onClick={() => logout} target="_blank" rel='noopener noreferrer'>
                             退出
                         </a>
                     )
                 }
-            ]}
-    />
+            ]
     const dispatch = useDispatch()
     //点击展开和收起
     const setCollapsed = () => { 
@@ -56,7 +55,7 @@ const CommonHeader = ({collapsed}) => {
               onClick={() => setCollapsed()}
             />
             <Dropdown
-              menu={dropDownItem}
+              menu={{items}}
             >
               <Avatar size={36} src = {<img src = {require("../../assets/images/user1.png")}/>} />   
             </Dropdown>        

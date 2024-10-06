@@ -13,6 +13,7 @@ const Main = () => {
     const collapsed = useSelector(state => state.tab.isCollapse)
 
     return (
+        <>
         <Layout style={{
             height:'100vh'
         }}>
@@ -31,6 +32,7 @@ const Main = () => {
                 </Content>
             </Layout>
         </Layout>
+        </>
     );
     }
 
