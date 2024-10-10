@@ -6,6 +6,7 @@ import Mall from "../page/mall";
 import User from "../page/user";
 import PageOne from "../page/other/pageOne";
 import PageTwo from "../page/other/pageTwo";
+import PageThree from "../page/other/pageThree";
 
 const routes = [
     {
@@ -39,6 +40,10 @@ const routes = [
                     {
                         path: 'pageTwo',
                         Component: PageTwo
+                    },
+                    {
+                        path: 'pageThree',
+                        Component: PageThree
                     }
                 ]
             }

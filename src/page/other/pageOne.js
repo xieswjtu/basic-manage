@@ -8,17 +8,24 @@ const PageOne = () => {
     const [count, setCount] = useState(0)
     return (
         <>
+          <nav>
+            1
+          </nav>
             <div> 这是PageOne </div>
             <div style={{
-                width:"200px",
-                height:"300px",
-                border:"1px solid"
+                width:"500px",
+                height:"500px",
+                border:"2px solid",
+                display:"flex",
+                flexDirection:"column",
+                alignItems:"center"
             }}>
-                context演示
-                {count}
+                <h2>context演示</h2>
+                <h3>{count}</h3>
                 <Provider value={{count, setCount}}>
                   <ComOne/>
-                </Provider>       
+                </Provider>  
+                {/* 不用Provider时使用context的默认值      */}
             </div>
         </>
         

@@ -36,6 +36,12 @@ export default [
                 name: 'page2',
                 label: '页面2',
                 icon: 'SettingOutlined'
+            },
+            {
+                path: '/other/pageThree',
+                name: 'page3',
+                label: '页面3',
+                icon: 'SettingOutlined'
             }
         ]
     },

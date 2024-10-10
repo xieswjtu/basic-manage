@@ -6,8 +6,12 @@ const {Consumer} = MyCotext
 function ComTwo(props) {
     return (
         <div style={{
-            width:"100px",
-            border:"1px solid"
+            width:"200px",
+            border:"1px solid",
+            display:"flex",
+            flexDirection:"column",
+            alignItems:"center",
+            marginBottom:"100px"
 
         }}>
             第二层第一个组件
@@ -16,8 +20,10 @@ function ComTwo(props) {
                     return (
                         <div style ={{
                             display:"flex",
+                            flexDirection:"column"
                         }}>
-                            <div>{context.count}</div> 
+                            <div>name:{context.name}</div>
+                            <div>count:{context.count}</div> 
                             <button onClick={()=>{
                                 context.setCount(context.count++)
                             }}>
