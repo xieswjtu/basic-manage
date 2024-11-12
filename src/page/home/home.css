@@ -6,6 +6,16 @@
 
 }
 
+
+.home img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 40px;
+
+}
+
+
 .user {
     display: flex;
     align-items: center;

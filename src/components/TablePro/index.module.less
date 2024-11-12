@@ -1,0 +1,46 @@
+.body {
+  :global {
+    .ant-table-tbody {
+        >tr:hover:not(.ant-table-expanded-row)>td,
+        .ant-table-row-hover,
+        .ant-table-row-hover>td {
+          background: #E5F2FF !important;
+        }
+      }
+    
+      .ant-table-fixed {
+        .ant-table-row-hover,
+        .ant-table-row-hover>td {
+          background: #E5F2FF !important;
+        }
+      }
+  }
+}
+.settingBar {
+  margin-bottom: 24px;
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center
+}
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center 
+}
+/* 屏幕尺寸小于等于768px */
+@media only screen and (max-width: 576px){
+  /* css样式 */
+    .settingBar{
+      flex-wrap: wrap;
+    }
+  } 
+
+/* 屏幕尺寸小于等于768px */
+@media only screen and (max-width: 768px){
+  /* css样式 */
+    .pagination{
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+  }

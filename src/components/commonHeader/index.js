@@ -4,6 +4,7 @@ import { MenuFoldOutlined } from '@ant-design/icons'
 import { useDispatch } from "react-redux";
 import { collapseMenu } from "../../store/reducers/tab";
 import { useNavigate } from "react-router-dom";
+import './index.css'
 
 const { Header} = Layout
 
@@ -57,7 +58,7 @@ const CommonHeader = ({collapsed}) => {
             <Dropdown
               menu={{items}}
             >
-              <Avatar size={36} src = {<img src = {require("../../assets/images/user1.png")}/>} />   
+              <img  src = {require("../../assets/images/user1.png")}/> 
             </Dropdown>        
         </Header>
     )

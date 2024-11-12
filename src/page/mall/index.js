@@ -2,7 +2,10 @@ import React from "react";
 
 const Mall = () => {
     return (
-        <div> 这是Mall </div>
+        <div>  
+            商品
+        </div>
+        
     )
 }
 
