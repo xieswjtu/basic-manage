@@ -8,11 +8,12 @@ import DrawerBody from '../../components/DrawerBody/index.tsx'
 // import ColorPicker from '../../components/ColorPicker/index.tsx'
 import { message } from 'antd'
 import StickyTable from '../../components/StickyTable/index.js'
-import ModalBody from '../../components/ModalBody/index.tsx'
-import { click } from "@testing-library/user-event/dist/click";
-import Index from "../../components/ModalBody/index.tsx";
 
 const PageTwo = () => {
+    //uesLoading用于Modal组件演示
+    const [open, setOpen] = useState(false);
+    // const [confirmLoading, setConfirmLoading] = useState(false);
+    const [modalText, setModalText] = useState('内容');
     const delay = function(t){
         return new Promise((resolve)=>{
             setTimeout(() => {
@@ -22,29 +23,19 @@ const PageTwo = () => {
         })
     }
     const [loading, onSubmit] = useLoading(async () => {
-       console.log(loading)
        setModalText("请等待...")
-       await delay(2000)
-      })
-    console.log(loading)
-    const [open, setOpen] = useState(false);
-    // const [confirmLoading, setConfirmLoading] = useState(false);
-    const [modalText, setModalText] = useState('内容');
-    
+       try {
+        const response = await fetch("http://localhost:3000/posts")
+        console.log(response)
+        await delay(2000)
+       } catch (error) {
+        console.log(error)
+       }
+      })   
     const showModal = () => {
         setOpen(true);
-        setModalText('内容')
-    };
-    
-    // const handleOk = () => {
-    //     setModalText('The modal will be closed after two seconds');
-    //     setConfirmLoading(true);
-    //     setTimeout(() => {
-    //     setOpen(false);
-    //     setConfirmLoading(false);
-    //     }, 2000);
-    // };
-    
+        setModalText('fetchAPI演示')
+    };   
     const handleCancel = () => {
         console.log('Clicked cancel button');
         setOpen(false);
@@ -58,7 +49,6 @@ const PageTwo = () => {
             }, t)
         })
     }
-
     const clickHandler = () =>{
         return confirmDelay(1000)
     }
@@ -97,15 +87,14 @@ const PageTwo = () => {
           label: `默认数据 ${i}`,
         });
     }
-
+    //DrawerBody组件演示
     const handleShow = () => {
         console.log('Drawer is shown')
       }
     
     const handleClose = () => {
         console.log('Drawer is closed')
-    }
-    
+    }   
     const showTest = () => {
         // 这里可以添加自定义逻辑，例如检查用户权限等
         return true // 返回 true 时 Drawer 可以显示
