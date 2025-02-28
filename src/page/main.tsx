@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CommonAside from "../components/commonAside";
-import CommonHeader from "../components/commonHeader";
+import CommonHeader from "../components/commonHeader/index.tsx";
 import { Outlet } from "react-router-dom";
   import { Layout, Menu } from 'antd';
 import { useSelector } from "react-redux";

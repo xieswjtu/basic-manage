@@ -1,7 +1,7 @@
 
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import Home from "../page/home";
-import Main from "../page/main";
+import Main from "../page/main.tsx";
 import Mall from "../page/mall";
 import User from "../page/user";
 import PageOne from "../page/other/pageOne";

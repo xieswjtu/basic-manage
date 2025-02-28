@@ -7,7 +7,7 @@ import SelectPro from '../../components/Select/index.tsx'
 import DrawerBody from '../../components/DrawerBody/index.tsx'
 // import ColorPicker from '../../components/ColorPicker/index.tsx'
 import { message } from 'antd'
-import StickyTable from '../../components/StickyTable/index.js'
+import StickyTable from '../../components/StickyTable/index.tsx'
 
 const PageTwo = () => {
     //uesLoading用于Modal组件演示
@@ -95,7 +95,7 @@ const PageTwo = () => {
     const handleClose = () => {
         console.log('Drawer is closed')
     }   
-    const showTest = () => {
+    const showTests = () => {
         // 这里可以添加自定义逻辑，例如检查用户权限等
         return true // 返回 true 时 Drawer 可以显示
     }
@@ -132,7 +132,7 @@ const PageTwo = () => {
                 trigger={<Button>打开 Drawer</Button>} // 触发显示的元素
                 onShow={handleShow} // 显示回调
                 onClose={handleClose} // 关闭回调
-                showTest={showTest} // 判断是否显示的条件
+                showTest={showTests} // 判断是否显示的条件
                 title="我的弹窗"
             >
                 <div>这里是 Drawer 的内容</div>
